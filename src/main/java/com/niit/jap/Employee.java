@@ -10,6 +10,7 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 public class Employee {
+    // This is a class.
     String name;
     int age;
     LocalDate dateOfBirth;
@@ -19,6 +20,7 @@ public class Employee {
     public Employee() {
     }
 
+    // This is a constructor.
     public Employee(String name, int age, LocalDate dateOfBirth, String adress, double salary) {
         this.name = name;
         this.age = age;
@@ -27,6 +29,7 @@ public class Employee {
         this.salary = salary;
     }
 
+    // This is a getter and setter method.
     public String getName() {
         return name;
     }
@@ -67,6 +70,13 @@ public class Employee {
         this.salary = salary;
     }
 
+    /**
+     * If the object is the same object, return true. If the object is null or is not the same class, return false. If the
+     * object is the same class, compare the fields and return true if they are all equal
+     *
+     * @param o The object to compare to.
+     * @return The hashcode of the object.
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -75,11 +85,17 @@ public class Employee {
         return age == employee.age && Double.compare(employee.salary, salary) == 0 && Objects.equals(name, employee.name) && Objects.equals(dateOfBirth, employee.dateOfBirth) && Objects.equals(adress, employee.adress);
     }
 
+    /**
+     * The hashCode() method returns a hash code value for the object
+     *
+     * @return The hashcode of the object.
+     */
     @Override
     public int hashCode() {
         return Objects.hash(name, age, dateOfBirth, adress, salary);
     }
 
+    // This is a toString method.
     @Override
     public String toString() {
         return "Employee{" + "name='" + name + '\'' + ", age=" + age + ", dateOfBirth=" + dateOfBirth + ", adress='" + adress + '\'' + ", salary=" + salary + '}';
