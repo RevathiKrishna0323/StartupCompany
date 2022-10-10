@@ -6,14 +6,13 @@
 
 package com.niit.jap;
 
-import java.time.LocalDate;
 import java.util.Objects;
 
 public class Employee {
     // This is a class.
     String name;
     int age;
-    LocalDate dateOfBirth;
+    String dateOfBirth;
     String adress;
     double salary;
 
@@ -21,7 +20,7 @@ public class Employee {
     }
 
     // This is a constructor.
-    public Employee(String name, int age, LocalDate dateOfBirth, String adress, double salary) {
+    public Employee(String name, int age, String dateOfBirth, String adress, double salary) {
         this.name = name;
         this.age = age;
         this.dateOfBirth = dateOfBirth;
@@ -46,11 +45,11 @@ public class Employee {
         this.age = age;
     }
 
-    public LocalDate getDateOfBirth() {
+    public String getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(LocalDate dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -99,5 +98,21 @@ public class Employee {
     @Override
     public String toString() {
         return "Employee{" + "name='" + name + '\'' + ", age=" + age + ", dateOfBirth=" + dateOfBirth + ", adress='" + adress + '\'' + ", salary=" + salary + '}';
+    }
+
+    /**
+     * This function calculates the annual salary of an employee.
+     *
+     * @return The annual salary of the employee.
+     */
+    public double calculateAnnualSalary() {
+
+        return this.salary * 12;
+    }
+
+    // This is a method.
+    public double salaryAfterHike(double hikePercentage) {
+        double hike = (20.0 / 100.0) * this.salary;
+        return this.salary = this.salary + hike;
     }
 }
